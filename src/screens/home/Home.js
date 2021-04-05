@@ -73,7 +73,7 @@ class Home extends Component {
             id: "",
             userName: "",
             commentText: "",
-            searchOn: false,
+            searchOn: true,
             originalImageArr: {},
             isLoggedIn: sessionStorage.getItem("access-token") == null ? false : true,
             accessToken: sessionStorage.getItem("access-token"),
@@ -89,15 +89,15 @@ class Home extends Component {
             xhr.addEventListener("readystatechange", function () {
                 if (this.readyState === 4) {
                     that.setState({
-                        
-                        id: JSON.parse(this.responseText).data.id,
-                        userName: JSON.parse(this.responseText).data.username
+
+                        userName: JSON.parse(this.responseText).username,
+                        id: JSON.parse(this.responseText).id
 
                     });
                 };
             });
-            xhr.open("GET", this.props.baseUrl + "/me?fields={fields}&access_token=" + that.state.accessToken);
-            xhr.send(data);
+            xhr.open("GET", this.props.baseUrl + "me?fields=id,username&access_token=" + that.state.accessToken);
+            xhr.send();
         }
 
         
@@ -106,13 +106,13 @@ class Home extends Component {
             xhrImages.addEventListener("readystatechange", function () {
                 if (this.readyState === 4) {
 
-                    let imageArr = JSON.parse(this.responseText).data
+                    let imageArr = JSON.parse(this.responseText).data;
                     
                     imageArr.forEach(element => {
-                        var date = parseInt(element.created_time, 10);
+                        var date = parseInt(element.timestamp, 10);
                         date = new Date(date * 1000);
                         
-                        element.created_time = date.toLocaleString()
+                        element.timestamp = date.toLocaleString();
 
                     });
                     
@@ -120,7 +120,7 @@ class Home extends Component {
 
                 }
             })
-            xhrImages.open("GET", this.props.baseUrl + "/me/media?fields=" + this.state.id + "&access_token="+ that.state.accessToken);
+            xhrImages.open("GET", this.props.baseUrl + "me/media?fields=id,caption,timestamp&access_token="+ that.state.accessToken);
             xhrImages.send();
         }
     }
