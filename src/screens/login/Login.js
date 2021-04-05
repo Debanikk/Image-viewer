@@ -43,10 +43,10 @@ class Login extends Component {
      * Login button handler function
      *****/
     loginClickHandler = () => {
-        let username = "InstaGrad";
-        let password = "Sass@123#";
+        let username = "ImageViewerDebanik";
+        let password = "Upgrad@123";
 
-        let accessToken = "IGQVJXUVY0UHdRbS1iRExzZAFRZAQjdIWG8yQVVaS2V2SVJNOVpyTnE0Sm9faGlqa1J6aDRZAS3pDME1LRE9WVXczT29ZANDZApaFdMWjUwNkVDSk5XSnhDNmprTHA1ZA1ZAGTHNabkFUbmlLMzVmUndHQndWQW9zRkQzUURmSnk0";
+        let accessToken = "IGQVJYRmhJVV9aTktUeTBxbkJzT3FHYjllbVRaNjVNeklKR1AzSElSanpIeEkwYWFqZAkRZAQ0FKR3FZAbXBzTkE0TWFhVHBETWhDZAHBHOHZAGYy00MTcxTXlvVUNzNDlkandEbnhNSGZA0TTZAFNktYX1kyU0JtZATdIeXZAzdXBR";
         if (this.state.username === "" || this.state.password === "") {
             this.state.username === "" ? this.setState({ usernameRequired: "dispBlock" }) : this.setState({ usernameRequired: "dispNone" });
             this.state.password === "" ? this.setState({ passwordRequired: "dispBlock" }) : this.setState({ passwordRequired: "dispNone" });

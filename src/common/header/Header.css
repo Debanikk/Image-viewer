@@ -1,0 +1,81 @@
+.app-header{
+    display: flex;
+    height: 40px;
+    background-color : #263238;
+    line-height: 40px;
+    padding: 20px;
+    align-items: center;
+}
+
+#app-logo{
+    color: #fff;
+    font-size: 18px;
+    text-decoration-line: none; 
+}
+
+/* The search box style in the header */
+.header-searchbox{
+
+    margin-left: auto;
+    display: flex;
+    /* align-self: center; */
+    align-items: center;
+    /* justify-content: center; */
+    width: 300px;
+    align-self: flex-start;
+    background-color: #c0c0c0;
+    border-radius: 4px;
+    height: 40px;
+}
+
+/* The no search box style in the header  */
+.header-searchbox-false{
+    margin-left: auto
+}
+
+/* The style for search icon in the header inside the search box  */
+#search-icon{
+    height: 27px;
+    padding: 0px 0px 0px 10px;
+}
+
+
+/* profile icon style  */
+#profile-icon{
+    margin-left: 40px;
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border: solid;
+    border-color: white;
+    border-width: thin;
+
+}
+
+/* profile picture style */
+#profile-picture{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+/* menu style when clicked on profile_picture */
+#profile-menu{
+    margin-top: 50px;
+    padding: 0px;
+}
+
+/* horizontal line style in the menu  */
+.horizontal-line{
+    border-bottom: groove;
+    width: 80%;
+    margin-left: 10%;
+}
+
+/* menu list style */
+.MuiMenu-list {
+    outline: 0;
+    background: rgb(223,223,223);
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
